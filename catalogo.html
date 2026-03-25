@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Catálogo de Filmes</title>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <div>
+                <p class="eyebrow">Projeto didático com Flask + Fetch</p>
+                <h1>Catálogo de Filmes</h1>
+                <p class="subtitle">
+                    Exemplo de front-end com HTML, CSS e JavaScript
+                    consumindo dados JSON de um back-end Flask.
+                </p>
+            </div>
+            <nav class="main-nav" aria-label="Navegação principal">
+                <a href="#destaque">Destaque</a>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="destaque" class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <span class="badge">HTML + CSS + JS + Flask</span>
+                    <h2>Uma base simples para ensinar cliente, servidor e consumo de API</h2>
+                    <p>
+                        O front-end buscará os filmes com <code>fetch('/api/movies')</code>
+                        e enviará o formulário para <code>/api/contact</code>.
+                    </p>
+                </div>
+                <div class="hero-panel">
+                    <h3>O que este exemplo mostra</h3>
+                    <ul>
+                        <li>Estrutura semântica com HTML</li>
+                        <li>Layout com Grid com Flexbox</li>
+                        <li>Manipulação de DOM e eventos</li>
+                        <li>Consumo e envio de JSON com fetch API</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="catalogo" class="catalog-section">
+            <div class="section-header">
+                <div>
+                    <p class="eyebrow">Catálogo</p>
+                    <h2>Filmes em destaque</h2>
+                </div>
+            </div>
+            <div class="container">
+                <div class="movie-grid">
+                    <article class="movie-card">
+                        <img 
+                            src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba" 
+                            alt="Pôster genérico de filme"
+                        >
+                        <div class="movie-card-content">
+                            <h3>Interestelar</h3>
+                            <p class="movie-meta">Ficção científica</p>
+                            <p>Nesta fase, os cards ainda são estáticos. O conteúdo será dinâmico na aula 05.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>Projeto didático de front-end com Flask e JSON.</p>
+        </div>
+    </footer>
+</body>
+</html>
