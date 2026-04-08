@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,34 +12,43 @@
         <div class="auth-copy">
           <p class="eyebrow">Projeto didático</p>
           <h1>Login no catálogo de filmes</h1>
-          <p>
-            Interface inicial do projeto. Nesta etapa a tela ainda é estática,
-            mas usa uma estrutura visual que será reaproveitada quando o Flask
-            entrar no projeto.
-          </p>
+          <p>Agora a tela já está preparada para validação com JavaScript.</p>
           <ul class="auth-list">
-            <li>Layout estático organizado</li>
-            <li>Semântica e hierarquia visual</li>
-            <li>Base pronta para validação com JavaScript</li>
+            <li>Validação front-end dos campos</li>
+            <li>Feedback visual de erro</li>
+            <li>Base pronta para integração com o Flask</li>
           </ul>
         </div>
 
-        <form class="auth-form">
+        <form id="loginForm" class="auth-form" novalidate>
           <label>
             <span>Usuário</span>
-            <input type="text" placeholder="Digite o usuário" />
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Digite o usuário"
+            />
+            <small class="field-error" id="usernameError"></small>
           </label>
-
           <label>
             <span>Senha</span>
-            <input type="password" placeholder="Digite a senha" />
+            <input
+              type="text"
+              id="password"
+              name="password"
+              placeholder="Digite a senha"
+            />
+            <small class="field-error" id="passwordError"></small>
           </label>
 
           <button class="button primary auth-button" type="submit">
             Entrar
           </button>
+          <p id="loginFeedback" class="form-feedback"></p>
         </form>
       </section>
     </main>
+    <script src="login.js"></script>
   </body>
 </html>

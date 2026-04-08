@@ -10,10 +10,10 @@
     <header class="site-header">
       <div class="container header-content">
         <div>
-          <p class="eyebrow">Projeto didático</p>
+          <p class="eyebrow">JavaScript no front-end</p>
           <h1>Catálogo de Filmes</h1>
           <p class="subtitle">
-            Versão estática com HTML semântico, Flexbox, Grid e responsividade.
+            Filtros, eventos, modal e formulário com validação.
           </p>
         </div>
         <nav class="main-nav" aria-label="Navegação principal">
@@ -28,25 +28,21 @@
       <section id="destaque" class="hero">
         <div class="container hero-grid">
           <div>
-            <span class="badge">MT1 - Interface estática</span>
-            <h2>Uma base moderna para evoluir nas próximas aulas</h2>
+            <span class="badge">MT2 - Parte 1</span>
+            <h2>Agora o usuário consegue interagir com a interface</h2>
             <p>
-              Nesta fase os filmes ainda estão escritos diretamente no HTML. O
-              objetivo é consolidar a parte visual antes de entrar em DOM,
-              eventos e consumo de API.
+              Os dados ainda estão no próprio JavaScript, mas a experiência já
+              se aproxima da versão final.
             </p>
-            <div class="hero-actions">
-              <a class="button primary" href="#catalogo">Ver catálogo</a>
-              <a class="button secondary" href="#contato">Ir para contato</a>
-            </div>
           </div>
           <div class="hero-panel">
-            <h3>O que esta página mostra</h3>
+            <h3>O que entra nesta aula</h3>
             <ul>
-              <li>Estrutura semântica com HTML</li>
-              <li>Layout com Grid e Flexbox</li>
-              <li>Cards de conteúdo</li>
-              <li>Responsividade básica</li>
+              <li>Busca por texto</li>
+              <li>Filtro por gênero</li>
+              <li>Botão de destaques</li>
+              <li>Modal de detalhes</li>
+              <li>Validação do formulário</li>
             </ul>
           </div>
         </div>
@@ -58,87 +54,29 @@
             <p class="eyebrow">Catálogo</p>
             <h2>Filmes em destaque</h2>
           </div>
+          <button id="featuredButton" class="button secundary" type="button">
+            Mostrar apenas destaques
+          </button>
         </div>
-        <div class="container movie-grid">
-          <article class="movie-card">
-            <img
-              src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80"
-              alt="Cartaz do filme Interestelar"
+        <div class="container filters">
+          <label>
+            <span>Buscar</span>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Digite o título ou gênero"
             />
-            <div class="movie-card-content">
-              <span class="tag">Ficção científica</span>
-              <h3>Interestelar</h3>
-              <div class="movie-meta">
-                <span>Ano: 2014</span>
-                <span>Duração: 169min</span>
-                <span>Nota: 8.7</span>
-              </div>
-              <p class="movie-description">
-                Após ver a Terra consumindo boa parte de suas reservas naturais,
-                um grupo de astronatuas recebe a missão de verificar possíveis
-                planetas para receberem a população mundial, possibilitando a
-                continuação da espécie. <br />
-                Cooper é chamado para liderar o grupo e aceita a missão sabendo
-                que pode nunca mais ver os filhos. Ao lado de Brand, Jenkins e
-                Doyle, ele seguirá em busca de uma nova casa.
-              </p>
-              <button class="button primary" type="button">Ver detalhes</button>
-            </div>
-          </article>
-
-          <article class="movie-card">
-            <img
-              src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80"
-              alt="Cartaz do filme Vingadores: Ultimato"
-            />
-            <div class="movie-card-content">
-              <span class="tag">Ação</span>
-              <h3>Vingadores: Ultimato</h3>
-              <div class="movie-meta">
-                <span>Ano: 2019</span>
-                <span>Duração: 181min</span>
-                <span>Nota: 8.4</span>
-              </div>
-              <p class="movie-description">
-                Em Vingadores: Ultimato, após Thanos eliminar metade das
-                criaturas vivas em Vingadores: Guerra Infinita, os heróis
-                precisam lidar com a dor da perda de amigos e seus entes
-                queridos. <br />
-                Com Tony Stark vagando perdido no espaço sem água nem comida, o
-                Capitão América e a Viúva Negra precisam liderar a resistência
-                contra o titã louco.
-              </p>
-              <button class="button primary" type="button">Ver detalhes</button>
-            </div>
-          </article>
-
-          <article class="movie-card">
-            <img
-              src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80"
-              alt="Cartaz do filme Interestelar"
-            />
-            <div class="movie-card-content">
-              <span class="tag">Ação</span>
-              <h3>Guardiões da Galáxia Vol. 3</h3>
-              <div class="movie-meta">
-                <span>Ano: 2023</span>
-                <span>Duração: 149min</span>
-                <span>Nota: 8.0</span>
-              </div>
-              <p class="movie-description">
-                Em Guardiões da Galáxia Vol. 3, o amado grupo de desajustados
-                busca se estabelecer em Lugar Nenhum, mas não demora muito para
-                que suas vidas sejam reviradas pelos ecos do passado turbulento
-                de Rocket. <br />
-                Ainda se recuperando da perda de Gamora, após os acontecimentos
-                de Vingadores: Guerra Infinita, Peter Quill reúne sua equipe
-                para defender o universo e um companheiro de equipe. Mas esta
-                missão pode significar o fim dos Guardiões como conhecemos, se
-                ela não for bem-sucedida.
-              </p>
-              <button class="button primary" type="button">Ver detalhes</button>
-            </div>
-          </article>
+          </label>
+          <label>
+            <span>Gênero</span>
+            <select id="genreSelect">
+              <option value="">Todos</option>
+            </select>
+          </label>
+        </div>
+        <div class="container">
+          <p id="statusMessage" class="status-message">Carregando filmes...</p>
+          <div id="movieGrid" class="movie-grid"></div>
         </div>
       </section>
 
@@ -146,41 +84,74 @@
         <div class="container contact-grid">
           <div>
             <p class="eyebrow">Contato</p>
-            <h2>Seção preparada para as próximas aulas</h2>
+            <h1>Peça uma recomendação</h1>
             <p>
-              No momento, este formulário é apenas visual. Nas aulas seguintes
-              ele será validado com JavaScript e enviado ao servidor com Fetch
-              API.
+              O formulário será validado no front-end e, na aula 07, enviado
+              para o back-end.
             </p>
           </div>
-          <form class="contact-form">
+          <form id="contactForm" class="contact-form" novalidate>
             <label>
               <span>Nome</span>
-              <input type="text" placeholder="Seu nome" />
+              <input type="text" id="name" name="name" placeholder="Seu nome" />
+              <small class="field-error" id="nameError"></small>
             </label>
-
             <label>
-              <span>E-mail</span>
-              <input type="email" placeholder="voce@email.com" />
+              <span>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="voce@email.com"
+                />
+                <small class="field-error" id="emailError"></small>
+              </span>
             </label>
-
+            <label>
+              <span>Filme de interesse</span>
+              <input
+                type="text"
+                id="movie"
+                name="movie"
+                placeholder="Ex.: Pânico"
+              />
+              <small class="field-error" id="movieError"></small>
+            </label>
             <label>
               <span>Mensagem</span>
-              <textarea rows="5" placeholder="Escreva sua mensagem"></textarea>
+              <textarea
+                name="message"
+                id="message"
+                rows="5"
+                placeholder="Escreve sua mensagem"
+              ></textarea>
+              <small class="field-error" id="messageError"></small>
             </label>
-
             <button type="submit" class="button primary">Enviar</button>
+            <p id="formFeedback" class="form-feedback"></p>
           </form>
         </div>
       </section>
     </main>
 
+    <div id="movieModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-content">
+        <button
+          id="closeModalButton"
+          class="modal-close"
+          aria-label="Fechar modal"
+        >
+          x
+        </button>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
     <footer class="site-footer">
       <div class="container footer-content">
-        <p>
-          MT1 concluído: interface estática pronta para evoluir com JavaScript.
-        </p>
+        <p>Projeto acadêmico de front-end em evolução.</p>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
